@@ -21,7 +21,7 @@
   gap: 9.6rem;
 }
 
-.hero-discription {
+.hero-description {
   font-size: 2.4rem;
   font-weight: 500;
   line-height: 1.6;
@@ -30,14 +30,20 @@
 }
 
 .hero-img-box {
-  height: 60rem;
-  width: 60rem;
+  width: 100%;
+  height: auto;
   border-radius: 11px;
-  overflow: hidden;
+  overflow: visible;
 }
 
-.hero.img {
+
+.hero-img {
+  transform: rotate(-10deg);
   width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  opacity: 0.6;
 }
 
 .header-nav {
