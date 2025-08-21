@@ -212,16 +212,25 @@ body {
   margin-bottom: 2.4rem;
 }
 
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
-  font-size: 2.4rem;
+
   text-decoration: none;
-  color: #4c3100;
+  font-size: 2.4rem;
+  font-weight: 600;
   padding: 1.6rem 3.2rem;
-  transition: all 0.3s;
-  font-weight: 500;
   border-radius: 11px;
+  color: #4c3100;
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  /* Put transition on original "state" */
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
 }
 
 .btn--full:link,
@@ -229,7 +238,7 @@ body {
   background-image: linear-gradient(
     to bottom right,
     #ffb733,
-    rgb(165, 252, 165)
+    rgb(145, 255, 145)
   );
 }
 
@@ -289,4 +298,8 @@ body {
   right: 0;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.border--left {
+  border-left: 1px solid rgba(99, 99, 99, 0.08);
 }
