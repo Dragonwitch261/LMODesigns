@@ -79,6 +79,15 @@
   const dwellMs = 3200;
   const animMs = 600;
   let timerId = null;
+  const n = reviews.length;
+  const total = slides.length; // 3n
+
+  function normalizeIndexRange(){
+    // keep index within [0, total)
+    if (index >= total || index < 0){
+      index = ((index % total) + total) % total;
+    }
+  }
 
   function getGapPx(){
     const cs = getComputedStyle(track);
@@ -95,6 +104,7 @@
 
   function setActive(){
     const items = track.children;
+    normalizeIndexRange();
     for (let i=0;i<items.length;i++) items[i].classList.remove('is-active');
     const activeEl = items[index];
     if (activeEl) activeEl.classList.add('is-active');
@@ -103,22 +113,20 @@
   function setTransform(noAnim){
     if (noAnim) track.classList.add('no-animate'); else track.classList.remove('no-animate');
     const items = track.children;
-    const activeEl = items[index];
-    const activeW = activeEl ? activeEl.offsetWidth : (items[0] ? items[0].offsetWidth : 0);
-    const centerOffset = (viewport.clientWidth - activeW) / 2;
+    normalizeIndexRange();
+    const activeEl = items[index] || items[0];
+    const activeW = activeEl.offsetWidth;
+    const centerOffset = (track.parentElement.clientWidth - activeW) / 2;
     const x = -(index * slideSize) + centerOffset;
     track.style.transform = 'translateX(' + x + 'px)';
   }
 
   function normalizeIfNeeded(){
-    const n = reviews.length;
-    if (index >= 2*n){
-      index -= n;
-      setTransform(true);
-    } else if (index < n){
-      index += n;
-      setTransform(true);
-    }
+    // after a transition, snap back to the middle copy without animation
+    let changed = false;
+    while (index >= 2*n){ index -= n; changed = true; }
+    while (index < n){ index += n; changed = true; }
+    if (changed){ setActive(); setTransform(true); }
   }
 
   function next(){
