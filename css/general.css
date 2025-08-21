@@ -160,7 +160,28 @@ body {
 .tint--mixed {
   border-radius: 9px;
   padding: 2rem;
-  background-image: linear-gradient(to right, #e6e6ff, #e6ffe6);
+  background-image: linear-gradient(to right, #e6e6ff, rgb(230, 255, 230));
+  box-shadow: 0 4px 4px rgba(119, 119, 119, 0.395);
+}
+
+.tint-blue--tr {
+  border-radius: 9px;
+  padding: 2rem;
+  background-color: rgb(230, 230, 255, 0.4);
+  box-shadow: 0 4px 4px rgba(119, 119, 119, 0.395);
+}
+
+.tint-green--tr {
+  border-radius: 9px;
+  padding: 2rem;
+  background-color: rgb(230, 255, 230, 0.7);
+  box-shadow: 0 4px 4px rgba(119, 119, 119, 0.395);
+}
+
+.tint-mixed--2 {
+  border-radius: 9px;
+  padding: 2rem;
+  background-image: linear-gradient(to right, #ccccff, #ccffcc);
   box-shadow: 0 4px 4px rgba(119, 119, 119, 0.395);
 }
 
