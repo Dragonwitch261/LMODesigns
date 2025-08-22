@@ -105,6 +105,12 @@
 
 .how-img {
   width: 100%;
+  transition: all 0.3s;
+}
+
+.how-img:hover {
+  transform: scale(140%);
+  transition: all 0.3s;
 }
 
 .how-text-box {
@@ -112,6 +118,12 @@
   font-weight: 500;
   color: #4c3100;
   text-align: center;
+  transition: all 0.3s;
+}
+
+.how-text-box:hover {
+  transform: scale(115%);
+  transition: all 0.4s;
 }
 
 .how-img-box {
@@ -163,7 +175,7 @@
 
 .review-item {
   flex: 0 0 clamp(28rem, 35vw, 42rem);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  /* border: 1px solid rgba(0, 0, 0, 0.08);  Makes a small line next to each focused review card turned off as a fix */
   border-radius: 14px;
   padding: 4.8rem;
   background-image: linear-gradient(to right, #e6e6ff, #e6ffe6);
@@ -290,6 +302,7 @@
   padding: 3.2rem 4.8rem;
   border-radius: 9px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s;
 }
 
 .price-card:hover {
@@ -380,8 +393,14 @@
   font-size: 2rem;
   text-decoration: none;
   padding: 1.2rem 2.4rem;
-  border: 2px solid #000;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 5);
+  border: 1px solid #aaa;
+  /*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); */
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 246, 230, 0.4),
+    rgba(230, 255, 230, 0.4)
+  );
+  box-shadow: 0 0.3rem 2rem rgba(119, 119, 119, 0.07);
 }
 
 .price-btn a:hover,
